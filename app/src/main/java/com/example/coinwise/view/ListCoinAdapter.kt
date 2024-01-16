@@ -9,26 +9,38 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.coinwise.R
 
-class ListCoinAdapter : RecyclerView.Adapter<ListCoinAdapter.ViewHolder>() {
+class ListCoinAdapter(
+    private val list: List<String>
+) : RecyclerView.Adapter<ListCoinAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_coin, parent, false)
         return ViewHolder(view)
     }
 
     override fun getItemCount(): Int {
-        return 7
+        return list.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind()
+        val item = list.get(position)
+        holder.bind(item)
+
     }
 
-    inner class ViewHolder(val item: View) : RecyclerView.ViewHolder(item) {
-        fun bind() {
-            val textCoin = item.findViewById<TextView>(R.id.txt_coin)
-            val imgCoin = item.findViewById<ImageView>(R.id.img_coin)
-            textCoin.text = "teste"
+    inner class ViewHolder(val itemView: View) : RecyclerView.ViewHolder(itemView) {
+        fun bind(item: String) {
+            val textCoin = itemView.findViewById<TextView>(R.id.txt_coin)
+            val imgCoin = itemView.findViewById<ImageView>(R.id.img_coin)
+
+
+            textCoin.text = item
+
             imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
+//            when(item.text){
+//                "earn" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
+//                "spend" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
+//                else -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
+//            }
 
         }
     }

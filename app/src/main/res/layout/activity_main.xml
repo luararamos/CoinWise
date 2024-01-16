@@ -25,12 +25,12 @@
             app:titleTextColor="@color/md_theme_light_onPrimary" />
     </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/main_recyclerview"
+    <FrameLayout
+        android:id="@+id/frame_activity_home"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
-        tools:listitem="@layout/item_coin" />
+        tools:layout="@layout/fragment_coins" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottom_nav_app_bar_activity_home"
