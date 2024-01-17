@@ -38,7 +38,9 @@ class ListCoinAdapter(
 
             imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
 
-            onItemClickListener.invoke(item)
+            itemView.setOnClickListener {
+                onItemClickListener.invoke(item)
+            }
 //            when(item.text){
 //                "earn" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
 //                "spend" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))

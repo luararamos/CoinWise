@@ -1,5 +1,6 @@
 package com.example.coinwise.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -17,12 +18,9 @@ class CoinsFragment : Fragment(R.layout.fragment_coins) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentCoinsBinding.bind(view)
         binding?.mainRecyclerview?.layoutManager = LinearLayoutManager(context)
-        binding?.mainRecyclerview?.adapter = ListCoinAdapter(listOf("oi", "test")) {
-            val fragment = CoinDetailsFragment().apply {
-                arguments = Bundle().apply {
-                    putString(KEY_COIN, it)
-                }
-            }
+        binding?.mainRecyclerview?.adapter = ListCoinAdapter(listOf("oi", "test")) {coin->
+            goToDetails(coin)
+
         }
 
 
@@ -32,10 +30,16 @@ class CoinsFragment : Fragment(R.layout.fragment_coins) {
         }
 
         mainViewModel.arrayListLiveData.observe(viewLifecycleOwner) { arrayList ->
-            binding?.mainRecyclerview?.adapter = ListCoinAdapter(arrayList){
-
+            binding?.mainRecyclerview?.adapter = ListCoinAdapter(arrayList){coin->
+                goToDetails(coin)
             }
         }
+    }
+
+    private fun goToDetails(coin: String) {
+        val intent = Intent(activity, CoinDetailsActivity::class.java)
+        intent.putExtra("coin", coin)
+        startActivity(intent)
     }
 
     override fun onDestroy() {
