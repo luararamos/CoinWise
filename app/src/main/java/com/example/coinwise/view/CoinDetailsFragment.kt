@@ -6,15 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.coinwise.R
+import com.example.coinwise.databinding.FragmentCoinDetailsBinding
 
-class CoinDetailsFragment : Fragment() {
+class CoinDetailsFragment : Fragment(R.layout.fragment_coin_details) {
+    private var binding: FragmentCoinDetailsBinding? = null
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val coin =
+            arguments?.getFloat(KEY_COIN) ?: throw IllegalArgumentException("coin not found")
+    }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_coin, container, false)
+    companion object {
+        const val KEY_COIN = "key_coin"
     }
 
 }

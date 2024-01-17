@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.coinwise.R
 
 class ListCoinAdapter(
-    private val list: List<String>
+    private val list: List<String>,
+    private val onItemClickListener: (String)-> Unit
 ) : RecyclerView.Adapter<ListCoinAdapter.ViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_coin, parent, false)
@@ -36,6 +37,8 @@ class ListCoinAdapter(
             textCoin.text = item
 
             imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
+
+            onItemClickListener.invoke(item)
 //            when(item.text){
 //                "earn" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
 //                "spend" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))

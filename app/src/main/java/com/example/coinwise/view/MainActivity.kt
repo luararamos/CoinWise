@@ -8,7 +8,7 @@ import com.example.coinwise.R
 import com.example.coinwise.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
     private lateinit var mainViewModel: MainViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         window.statusBarColor = getColor(R.color.md_theme_dark_background)
 
-        var fragment = CoinsFragment()
+        val fragment = CoinsFragment()
 
         supportFragmentManager.beginTransaction().apply {
             add(R.id.frame_activity_home, fragment)
@@ -28,32 +28,33 @@ class MainActivity : AppCompatActivity() {
         binding.fabActivityHome.setOnClickListener {
             setAlertDialog()
         }
-
-
     }
 
     private fun setAlertDialog() {
-        // Set up the alert builder
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Choose some animals")
 
-        // Add a checkbox list
         val coins = arrayOf("ADA", "BNB", "BTC", "DOGE", "ETH", "USDT", "XRP")
         val checkedItems = booleanArrayOf(true, false, true, false, false, true, false)
 
-        val coinsList = listOf(*coins)
         builder.setMultiChoiceItems(coins, checkedItems) { dialog, which, isChecked ->
             checkedItems[which] = isChecked
-            val currentItem = coinsList[which]
 
         }
 
-        // Add OK and Cancel buttons
         builder.setPositiveButton("OK") { dialog, which ->
             //TODO Chamar presenter para bater na api
-            mainViewModel.arrayListLiveData.postValue(coinsList)
+            val listSelected = ArrayList<String>()
 
+            for (i in checkedItems.indices) {
+                val checked = checkedItems[i]
+                if (checked) {
+                    listSelected.add(coins[i])
+                }
+                mainViewModel.arrayListLiveData.postValue(listSelected)
+            }
         }
+
         builder.setNegativeButton("Cancel", null)
 
         val dialog = builder.create()
