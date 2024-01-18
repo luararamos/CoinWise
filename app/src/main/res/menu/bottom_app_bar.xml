@@ -3,8 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/home"
+        android:id="@+id/main"
         android:icon="@drawable/ic_home"
+        android:contentDescription="@null"
+        app:showAsAction="always"
+        android:title="@string/home"/>
+
+    <item
+        android:id="@+id/information"
+        android:icon="@drawable/ic_information"
+        android:contentDescription="@null"
+        app:showAsAction="always"
+        android:title="@string/home"/>
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/ic_about"
         android:contentDescription="@null"
         app:showAsAction="always"
         android:title="@string/home"/>
