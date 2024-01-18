@@ -41,11 +41,16 @@ class ListCoinAdapter(
             itemView.setOnClickListener {
                 onItemClickListener.invoke(item)
             }
-//            when(item.text){
-//                "earn" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
-//                "spend" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
-//                else -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
-//            }
+            when(item){
+                "ADA" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_ada))
+                "BNB" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_bnb))
+                "BTC" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_btc))
+                "DOGE" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_doge))
+                "ETH" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_eth))
+                "USDT" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_usdt))
+                "XRP" -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_xrp))
+                else -> imgCoin.setImageDrawable(ContextCompat.getDrawable(itemView.context, R.drawable.ic_information))
+            }
 
         }
     }

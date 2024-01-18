@@ -22,8 +22,6 @@ class CoinsFragment : Fragment(R.layout.fragment_coins) {
 
         }
 
-
-
         activity?.let {
             mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
         }

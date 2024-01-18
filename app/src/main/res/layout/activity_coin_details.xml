@@ -24,6 +24,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed|snap">
 
             <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/cv_coin_activity_deatails"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_gravity="center"

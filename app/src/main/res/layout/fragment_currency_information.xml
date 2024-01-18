@@ -152,40 +152,40 @@
             tools:layout_editor_absoluteX="16dp" />
 
         <TextView
-            android:id="@+id/txt_dodge_fragment_information"
+            android:id="@+id/txt_doge_fragment_information"
             style="@style/MyTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
             android:layout_marginTop="32dp"
             android:layout_marginEnd="8dp"
-            android:text="@string/dogecoin_dodge"
+            android:text="@string/dogecoin_doge"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@+id/img_dodge_fragment_information"
+            app:layout_constraintEnd_toStartOf="@+id/img_doge_fragment_information"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/view3" />
 
         <TextView
-            android:id="@+id/txt_information_dodge_fragment_information"
+            android:id="@+id/txt_information_doge_fragment_information"
             style="@style/MyTextView"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
-            android:text="@string/dodge_information"
-            app:layout_constraintEnd_toStartOf="@+id/img_dodge_fragment_information"
+            android:text="@string/doge_information"
+            app:layout_constraintEnd_toStartOf="@+id/img_doge_fragment_information"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/txt_dodge_fragment_information"
-            app:layout_constraintTop_toBottomOf="@+id/txt_dodge_fragment_information" />
+            app:layout_constraintStart_toStartOf="@+id/txt_doge_fragment_information"
+            app:layout_constraintTop_toBottomOf="@+id/txt_doge_fragment_information" />
 
         <ImageView
-            android:id="@+id/img_dodge_fragment_information"
+            android:id="@+id/img_doge_fragment_information"
             android:layout_width="56dp"
             android:layout_height="56dp"
             android:layout_marginEnd="32dp"
             android:src="@drawable/ic_doge"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_information_dodge_fragment_information"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_information_doge_fragment_information"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/txt_dodge_fragment_information"
+            app:layout_constraintTop_toTopOf="@+id/txt_doge_fragment_information"
             android:contentDescription="@null" />
 
         <View
@@ -195,7 +195,7 @@
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="24dp"
             android:background="@color/seed"
-            app:layout_constraintTop_toBottomOf="@+id/txt_information_dodge_fragment_information"
+            app:layout_constraintTop_toBottomOf="@+id/txt_information_doge_fragment_information"
             tools:layout_editor_absoluteX="16dp" />
 
         <TextView
@@ -219,7 +219,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="@string/eth_information"
-            app:layout_constraintEnd_toStartOf="@+id/img_dodge_fragment_information"
+            app:layout_constraintEnd_toStartOf="@+id/img_doge_fragment_information"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@+id/txt_eth_fragment_information"
             app:layout_constraintTop_toBottomOf="@+id/txt_eth_fragment_information" />
