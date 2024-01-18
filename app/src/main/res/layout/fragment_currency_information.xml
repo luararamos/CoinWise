@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".view.CurrencyInformationFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/txt_ada_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/cardano_ada"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_ada_fragment_information"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_information_ada_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/ada_information"
+            app:layout_constraintEnd_toStartOf="@+id/img_ada_fragment_information"
+            app:layout_constraintStart_toStartOf="@+id/txt_ada_fragment_information"
+            app:layout_constraintTop_toBottomOf="@+id/txt_ada_fragment_information" />
+
+        <ImageView
+            android:id="@+id/img_ada_fragment_information"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_ada"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_information_ada_fragment_information"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_ada_fragment_information"
+            android:contentDescription="@null" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/seed"
+            app:layout_constraintTop_toBottomOf="@+id/txt_information_ada_fragment_information"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_bnb_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/binance_coin_bnb"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_bnb_fragment_information"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1" />
+
+        <TextView
+            android:id="@+id/txt_information_bnb_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/bnb_information"
+            app:layout_constraintEnd_toStartOf="@+id/img_bnb_fragment_information"
+            app:layout_constraintStart_toStartOf="@+id/txt_bnb_fragment_information"
+            app:layout_constraintTop_toBottomOf="@+id/txt_bnb_fragment_information" />
+
+        <ImageView
+            android:id="@+id/img_bnb_fragment_information"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_bnb"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_information_bnb_fragment_information"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_bnb_fragment_information"
+            android:contentDescription="@null" />
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/seed"
+            app:layout_constraintTop_toBottomOf="@+id/txt_information_bnb_fragment_information"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_btc_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/bitcoin_btc"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_btc_fragment_information"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view2" />
+
+        <TextView
+            android:id="@+id/txt_information_btc_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/btc_information"
+            app:layout_constraintEnd_toStartOf="@+id/img_btc_fragment_information"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txt_btc_fragment_information"
+            app:layout_constraintTop_toBottomOf="@+id/txt_btc_fragment_information" />
+
+        <ImageView
+            android:id="@+id/img_btc_fragment_information"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_btc"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_information_btc_fragment_information"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_btc_fragment_information"
+            android:contentDescription="@null" />
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/seed"
+            app:layout_constraintTop_toBottomOf="@+id/txt_information_btc_fragment_information"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_dodge_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/dogecoin_dodge"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_dodge_fragment_information"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view3" />
+
+        <TextView
+            android:id="@+id/txt_information_dodge_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/dodge_information"
+            app:layout_constraintEnd_toStartOf="@+id/img_dodge_fragment_information"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txt_dodge_fragment_information"
+            app:layout_constraintTop_toBottomOf="@+id/txt_dodge_fragment_information" />
+
+        <ImageView
+            android:id="@+id/img_dodge_fragment_information"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_doge"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_information_dodge_fragment_information"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_dodge_fragment_information"
+            android:contentDescription="@null" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/seed"
+            app:layout_constraintTop_toBottomOf="@+id/txt_information_dodge_fragment_information"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_eth_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/ethereum_eth"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_eth_fragment_information"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view4" />
+
+        <TextView
+            android:id="@+id/txt_information_eth_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/eth_information"
+            app:layout_constraintEnd_toStartOf="@+id/img_dodge_fragment_information"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txt_eth_fragment_information"
+            app:layout_constraintTop_toBottomOf="@+id/txt_eth_fragment_information" />
+
+        <ImageView
+            android:id="@+id/img_eth_fragment_information"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_eth"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_information_eth_fragment_information"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_eth_fragment_information"
+            android:contentDescription="@null" />
+
+        <View
+            android:id="@+id/view5"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/seed"
+            app:layout_constraintTop_toBottomOf="@+id/txt_information_eth_fragment_information"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_usdt_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/tether_usdt"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_usdt_fragment_information"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view5" />
+
+        <TextView
+            android:id="@+id/txt_information_usdt_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/usdt_information"
+            app:layout_constraintEnd_toStartOf="@+id/img_usdt_fragment_information"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txt_usdt_fragment_information"
+            app:layout_constraintTop_toBottomOf="@+id/txt_usdt_fragment_information" />
+
+        <ImageView
+            android:id="@+id/img_usdt_fragment_information"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_usdt"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_information_usdt_fragment_information"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_usdt_fragment_information"
+            android:contentDescription="@null" />
+
+        <View
+            android:id="@+id/view6"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="24dp"
+            android:background="@color/seed"
+            app:layout_constraintTop_toBottomOf="@+id/txt_information_usdt_fragment_information"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/txt_xrp_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="8dp"
+            android:text="@string/ripple_xrp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/img_xrp_fragment_information"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view6" />
+
+        <TextView
+            android:id="@+id/txt_information_xrp_fragment_information"
+            style="@style/MyTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/xrp_information"
+            app:layout_constraintEnd_toStartOf="@+id/img_xrp_fragment_information"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/txt_xrp_fragment_information"
+            app:layout_constraintTop_toBottomOf="@+id/txt_xrp_fragment_information" />
+
+        <ImageView
+            android:id="@+id/img_xrp_fragment_information"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_marginEnd="32dp"
+            android:src="@drawable/ic_xrp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_information_xrp_fragment_information"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txt_xrp_fragment_information"
+            android:contentDescription="@null" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

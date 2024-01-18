@@ -1,6 +1,21 @@
 <resources>
     <string name="app_name">Coin Wise</string>
     <string name="home">Home</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">\n \n oiiii</string>
+    <string name="about">O aplicativo Coin Wise foi desenvolvido para os especialistas de criptomoedas darem suas opniões sobre as moedas. O especialista pode filtrar as moedas que lhe interessam para análise.</string>
+    <string name="cardano_ada">Cardano (ADA)</string>
+    <string name="ada_information">A criptomoeda cardano, foi criada em 2017 por um dos fundadores do ethereum, Charles Hoskinson e começou a circular no mesmo ano.A cardano (ADA) tem uma capitalização de mercado de R$ 234,9 bilhões (US$ 43,37 bilhões), segundo a CoinMarketCap. \n \n Segundo levantamento da UseCripto, desde sua criação em 2017 até o dia 29 de abril, a Cardano (ADA) valorizou 4139%.</string>
+    <string name="binance_coin_bnb">Binance Coin (BNB)</string>
+    <string name="bnb_information">Esta é a terceira maior criptomoeda no mundo, com capitalização de R$ 520,170 bilhões (cerca de US$ 94,2 bilhões), segundo o CoinMarketCap.\n \n Criada com o objetivo de competir com a ethereum, a binance tem planos de lançar NFTs na blockchain e tokenizar ativos para competir com a outra rede.\n \n Segundo levantamento da UseCripto, desde a sua criação em 2017 até o dia 29 de abril, a Binance Coin (BNB) valorizou 1.950%.</string>
+    <string name="bitcoin_btc">Bitcoin (BTC)</string>
+    <string name="btc_information">O bitcoin é a maior criptomoeda e a mais popular, com uma capitalização de R$ 5,7 trilhões no final de abril, segundo dados da CoinMarketCap. A criptomoeda tem um criador misterioso chamado Satoshi Nakamoto, que publicou em um grupo de mensagens eletrônicas um documento chamado “Bitcoin: A Peer-to-Peer Electronic Cash System”. \n \n Segundo levantamento da UseCripto, desde sua criação em 2008 até o dia 29 de abril, o bitcoin valorizou 1.212.666% (mais de um milhão por cento).</string>
+    <string name="dogecoin_dodge">Dogecoin (DOGE)</string>
+    <string name="dodge_information">Na sétima posição está a dogecoin (DOGE), criada em 2013, como uma piada da internet, com o cãozinho Shiba Inu.\n \n A Dogecoin tem capitalização de mercado de R$ 231,38 bilhões (US$ 41,14 bilhões), segundo a CoinMarketCap. O valor da moeda digital é bem baixo, de R$ 1,78 (0,32 centavos de dólar). Atualmente, há 129 bilhões de Dogecoin em circulação e novas moedas podem ser mineradas.\n \n Segundo levantamento da UseCripto, desde sua criação em 2013 até o dia 29 de abril, a Dogecoin (DOGE) valorizou 71.000%.</string>
+    <string name="ethereum_eth">Ethereum (ETH)</string>
+    <string name="eth_information">A plataforma Ethereum que tem como criptomoeda a ether, foi criada em 2013 pelo programador canadense Vitalik Buterin e entrou no ar em julho de 2015. É a segunda maior criptomoeda, com capitalização de mercado de R$ 1,74 trilhão (cerca de US$ 319,42 bilhões), segundo a CoinMarketCap.\n \n Segundo levantamento da UseCripto, desde sua criação até o dia 29 de abril, o ethereum valorizou 2600%.</string>
+    <string name="tether_usdt">Tether (USDT)</string>
+    <string name="usdt_information">O tether (USDT), foi lançado em 2014, com o objetivo de ter paridade com o dólar dos Estados Unidos. Se trata de uma stablecoin (criptomoeda lastreada em uma moeda física).\n \n A lógica é que, para cada 1 tether, exista 1 dólar guardado em caixa. </string>
+    <string name="ripple_xrp">Ripple (XRP))</string>
+    <string name="xrp_information">É a quarta maior criptomoeda por capitalização de mercado, na ordem de R$391,4 bilhões (US$ 71,53 bilhões), segundo a CoinMarketCap.\n \n Segundo a UseCripto, desde sua criação em 2013 até o dia 29 de abril, a ripple (XRP) valorizou 370%.</string>
+
 </resources>

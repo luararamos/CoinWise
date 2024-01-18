@@ -13,6 +13,9 @@
         android:theme="@style/Theme.CoinWise"
         tools:targetApi="31">
         <activity
+            android:name=".view.CurrencyInformationActivity"
+            android:exported="false" />
+        <activity
             android:name=".view.CoinDetailsActivity"
             android:exported="false" />
         <activity

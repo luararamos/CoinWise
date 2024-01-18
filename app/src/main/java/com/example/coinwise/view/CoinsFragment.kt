@@ -8,7 +8,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coinwise.R
 import com.example.coinwise.databinding.FragmentCoinsBinding
-import com.example.coinwise.view.CoinDetailsFragment.Companion.KEY_COIN
 
 class CoinsFragment : Fragment(R.layout.fragment_coins) {
     private var binding: FragmentCoinsBinding? = null
