@@ -1,8 +1,5 @@
 package com.example.coinwise.db
 
-import androidx.room.ColumnInfo
-import androidx.room.PrimaryKey
-
 
 data class Coin(val coin: List<String>) {
     fun convertCoinToString(): String {

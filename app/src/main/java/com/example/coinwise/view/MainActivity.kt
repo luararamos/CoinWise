@@ -22,29 +22,32 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         window.statusBarColor = getColor(R.color.md_theme_dark_background)
 
-        val fragment = CoinsListFragment()
-        presenter = MainPresenter(DependencyInjector.coinRepository(this))
+
+        presenter = MainPresenter(view = this, repository = DependencyInjector.coinRepository(this))
+        presenter.findCoins()
+        val fragment = ListCoinFragment()
 
         supportFragmentManager.beginTransaction().apply {
-            add(R.id.frame_activity_home, fragment)
+            add(R.id.frame_activity_main, fragment)
             commit()
         }
 
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-        binding.fabActivityHome.setOnClickListener {
+        binding.fabActivityMain.setOnClickListener {
             setAlertDialog()
         }
         setNavigation()
-
     }
 
-
+    fun onGetCoin(l: List<String>) {
+        mainViewModel.arrayListLiveData.postValue(l)
+    }
 
 
     private fun setAlertDialog() {
         val builder = AlertDialog.Builder(this)
-        builder.setTitle("Choose some animals")
+        builder.setTitle("Escolha as moedas")
 
         val coins = arrayOf("ADA", "BNB", "BTC", "DOGE", "ETH", "USDT", "XRP")
         val checkedItems = booleanArrayOf(true, false, true, false, false, true, false)
@@ -65,7 +68,7 @@ class MainActivity : AppCompatActivity() {
                 }
             }
             mainViewModel.arrayListLiveData.postValue(listSelected)
-            presenter.addCoin(CoinTable(Coin(listSelected)))
+            presenter.updateCoin(CoinTable(id = 1,Coin(listSelected).convertCoinToString()))
         }
 
         builder.setNegativeButton("Cancel", null)
@@ -75,11 +78,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setNavigation() {
-        binding.bottomNavAppBarActivityHome.setOnMenuItemClickListener { item ->
+        binding.bottomNavAppBarActivityMain.setOnMenuItemClickListener { item ->
 
             when (item.itemId) {
                 R.id.main -> {
-                    goToFragment(CoinsListFragment())
+                    goToFragment(ListCoinFragment())
                     true
                 }
 
@@ -100,7 +103,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun goToFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction().apply {
-            replace(R.id.frame_activity_home, fragment)
+            replace(R.id.frame_activity_main, fragment)
             commit()
         }
     }

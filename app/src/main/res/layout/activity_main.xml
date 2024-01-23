@@ -8,14 +8,14 @@
     android:orientation="vertical">
 
     <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_activity_home"
+        android:id="@+id/app_bar_activity_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/md_theme_light_inversePrimary"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
         <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_activity_home"
+            android:id="@+id/toolbar_activity_main"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:layout_gravity="center_horizontal"
@@ -26,14 +26,14 @@
     </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
-        android:id="@+id/frame_activity_home"
+        android:id="@+id/frame_activity_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
         tools:layout="@layout/fragment_list_coins" />
 
     <com.google.android.material.bottomappbar.BottomAppBar
-        android:id="@+id/bottom_nav_app_bar_activity_home"
+        android:id="@+id/bottom_nav_app_bar_activity_main"
         style="@style/Widget.Material3.BottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -45,11 +45,11 @@
 
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab_activity_home"
+        android:id="@+id/fab_activity_main"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:contentDescription="@null"
         android:src="@drawable/ic_add"
-        app:layout_anchor="@id/bottom_nav_app_bar_activity_home" />
+        app:layout_anchor="@id/bottom_nav_app_bar_activity_main" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

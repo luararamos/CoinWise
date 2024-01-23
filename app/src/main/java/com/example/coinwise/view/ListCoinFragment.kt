@@ -10,14 +10,14 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coinwise.R
 import com.example.coinwise.databinding.FragmentListCoinsBinding
 
-class CoinsListFragment : Fragment(R.layout.fragment_list_coins) {
+class ListCoinFragment : Fragment(R.layout.fragment_list_coins) {
     private var binding: FragmentListCoinsBinding? = null
     private lateinit var mainViewModel: MainViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentListCoinsBinding.bind(view)
-        binding?.mainRecyclerview?.layoutManager = LinearLayoutManager(context)
+        binding?.rvFragmentInformation?.layoutManager = LinearLayoutManager(context)
 
         activity?.let {
             mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
@@ -33,13 +33,13 @@ class CoinsListFragment : Fragment(R.layout.fragment_list_coins) {
     private fun showListCoin(coins: List<String>) {
         if (coins.isEmpty()) {
             val drawable = ContextCompat.getDrawable(this.requireContext(), R.drawable.unfiltered_message)
-            binding?.imgNoCoins?.setImageDrawable(drawable)
-            binding?.imgNoCoins?.visibility = View.VISIBLE
+            binding?.imgNoCoinsFragmentInformation?.setImageDrawable(drawable)
+            binding?.imgNoCoinsFragmentInformation?.visibility = View.VISIBLE
         } else {
-            binding?.mainRecyclerview?.adapter = ListCoinAdapter(coins) { coin ->
+            binding?.rvFragmentInformation?.adapter = ListCoinAdapter(coins) { coin ->
                 goToDetails(coin)
             }
-            binding?.imgNoCoins?.visibility = View.GONE
+            binding?.imgNoCoinsFragmentInformation?.visibility = View.GONE
         }
 
     }
