@@ -6,11 +6,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.coinwise.R
+import com.example.coinwise.base.DependencyInjector
 import com.example.coinwise.databinding.ActivityMainBinding
+import com.example.coinwise.db.Coin
+import com.example.coinwise.db.CoinTable
+import com.example.coinwise.presentation.MainPresenter
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mainViewModel: MainViewModel
+    lateinit var presenter: MainPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -18,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         window.statusBarColor = getColor(R.color.md_theme_dark_background)
 
         val fragment = CoinsFragment()
+        presenter = MainPresenter(DependencyInjector.coinRepository(this))
 
         supportFragmentManager.beginTransaction().apply {
             add(R.id.frame_activity_home, fragment)
@@ -30,6 +36,7 @@ class MainActivity : AppCompatActivity() {
             setAlertDialog()
         }
         setNavigation()
+
     }
 
     private fun setAlertDialog() {
@@ -53,8 +60,9 @@ class MainActivity : AppCompatActivity() {
                 if (checked) {
                     listSelected.add(coins[i])
                 }
-                mainViewModel.arrayListLiveData.postValue(listSelected)
             }
+            mainViewModel.arrayListLiveData.postValue(listSelected)
+            presenter.addCoin(CoinTable(Coin(listSelected)))
         }
 
         builder.setNegativeButton("Cancel", null)
