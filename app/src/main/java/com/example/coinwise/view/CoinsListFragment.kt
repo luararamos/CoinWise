@@ -3,34 +3,45 @@ package com.example.coinwise.view
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.coinwise.R
-import com.example.coinwise.databinding.FragmentCoinsBinding
+import com.example.coinwise.databinding.FragmentListCoinsBinding
 
-class CoinsFragment : Fragment(R.layout.fragment_coins) {
-    private var binding: FragmentCoinsBinding? = null
+class CoinsListFragment : Fragment(R.layout.fragment_list_coins) {
+    private var binding: FragmentListCoinsBinding? = null
     private lateinit var mainViewModel: MainViewModel
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding = FragmentCoinsBinding.bind(view)
+        binding = FragmentListCoinsBinding.bind(view)
         binding?.mainRecyclerview?.layoutManager = LinearLayoutManager(context)
-        binding?.mainRecyclerview?.adapter = ListCoinAdapter(listOf("oi", "test")) {coin->
-            goToDetails(coin)
-
-        }
 
         activity?.let {
             mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
         }
 
         mainViewModel.arrayListLiveData.observe(viewLifecycleOwner) { arrayList ->
-            binding?.mainRecyclerview?.adapter = ListCoinAdapter(arrayList){coin->
+
+            showListCoin(arrayList)
+        }
+
+    }
+
+    private fun showListCoin(coins: List<String>) {
+        if (coins.isEmpty()) {
+            val drawable = ContextCompat.getDrawable(this.requireContext(), R.drawable.unfiltered_message)
+            binding?.imgNoCoins?.setImageDrawable(drawable)
+            binding?.imgNoCoins?.visibility = View.VISIBLE
+        } else {
+            binding?.mainRecyclerview?.adapter = ListCoinAdapter(coins) { coin ->
                 goToDetails(coin)
             }
+            binding?.imgNoCoins?.visibility = View.GONE
         }
+
     }
 
     private fun goToDetails(coin: String) {

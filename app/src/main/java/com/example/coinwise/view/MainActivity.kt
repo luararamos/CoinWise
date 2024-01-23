@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         window.statusBarColor = getColor(R.color.md_theme_dark_background)
 
-        val fragment = CoinsFragment()
+        val fragment = CoinsListFragment()
         presenter = MainPresenter(DependencyInjector.coinRepository(this))
 
         supportFragmentManager.beginTransaction().apply {
@@ -38,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         setNavigation()
 
     }
+
+
+
 
     private fun setAlertDialog() {
         val builder = AlertDialog.Builder(this)
@@ -76,7 +79,7 @@ class MainActivity : AppCompatActivity() {
 
             when (item.itemId) {
                 R.id.main -> {
-                    goToFragment(CoinsFragment())
+                    goToFragment(CoinsListFragment())
                     true
                 }
 
