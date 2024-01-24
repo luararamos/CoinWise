@@ -37,7 +37,7 @@ As seguintes ferramentas foram utilizadas na construção do projeto:
  <sub><b>Luara Ramos (Lise)</b></sub></a> 
 
 
-Made with ❤️ by Luara Ramos 👋🏽 Get in touch!
+Feito com ❤️ por Luara Ramos 👋🏽 Entre em contato!
 
 [![Linkedin Badge](https://img.shields.io/badge/-LuaraRamos-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/luararamos/)](https://www.linkedin.com/in/luararamos-desenvolvedor-android/) 
 [![Gmail Badge](https://img.shields.io/badge/-luara.m.ramos@gmail.com-c14438?style=flat-square&logo=Gmail&logoColor=white&link=mailto:luara.m.ramos@gmail.com)](mailto:luara.m.ramos@gmail.com)
