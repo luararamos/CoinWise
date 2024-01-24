@@ -25,6 +25,15 @@ class MainPresenter(
     }
 
     @SuppressLint("CheckResult")
+    fun removeCoin(coinId: Int) {
+        repository.deleteCoin(coinId)
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe()
+
+    }
+
+    @SuppressLint("CheckResult")
     fun findCoins() {
         repository.findAllCoin()
             .subscribeOn(Schedulers.io())

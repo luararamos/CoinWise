@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Coin Wise</string>
     <string name="home">Home</string>
-    <string name="hello_blank_fragment">\n \n oiiii</string>
+    <string name="delete">Delete</string>
     <string name="about">O aplicativo Coin Wise foi desenvolvido para os especialistas de criptomoedas darem suas opniões sobre as moedas. O especialista pode filtrar as moedas que lhe interessam para análise.</string>
     <string name="cardano_ada">Cardano (ADA)</string>
     <string name="ada_information">A criptomoeda cardano, foi criada em 2017 por um dos fundadores do ethereum, Charles Hoskinson e começou a circular no mesmo ano.A cardano (ADA) tem uma capitalização de mercado de R$ 234,9 bilhões (US$ 43,37 bilhões), segundo a CoinMarketCap. \n \n Segundo levantamento da UseCripto, desde sua criação em 2017 até o dia 29 de abril, a Cardano (ADA) valorizou 4139%.</string>
@@ -17,5 +17,7 @@
     <string name="usdt_information">O tether (USDT), foi lançado em 2014, com o objetivo de ter paridade com o dólar dos Estados Unidos. Se trata de uma stablecoin (criptomoeda lastreada em uma moeda física).\n \n A lógica é que, para cada 1 tether, exista 1 dólar guardado em caixa. </string>
     <string name="ripple_xrp">Ripple (XRP))</string>
     <string name="xrp_information">É a quarta maior criptomoeda por capitalização de mercado, na ordem de R$391,4 bilhões (US$ 71,53 bilhões), segundo a CoinMarketCap.\n \n Segundo a UseCripto, desde sua criação em 2013 até o dia 29 de abril, a ripple (XRP) valorizou 370%.</string>
+    <string name="delete_message">Deseja deletar suas preferências?</string>
+    <string name="cancel">cancelar</string>
 
 </resources>

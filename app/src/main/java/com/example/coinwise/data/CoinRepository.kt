@@ -20,4 +20,8 @@ class CoinRepository(context: Context) {
     fun findAllCoin(): Single<List<CoinTable>> {
         return dao.getAllCoin()
     }
+
+    fun deleteCoin(id: Int): Completable {
+        return dao.delete(id)
+    }
 }

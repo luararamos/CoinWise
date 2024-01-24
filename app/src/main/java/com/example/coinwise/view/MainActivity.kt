@@ -2,7 +2,12 @@ package com.example.coinwise.view
 
 import android.app.AlertDialog
 import android.os.Bundle
+import android.view.Menu
+import android.view.View
+import android.widget.LinearLayout
+import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.coinwise.R
@@ -11,6 +16,7 @@ import com.example.coinwise.databinding.ActivityMainBinding
 import com.example.coinwise.db.Coin
 import com.example.coinwise.db.CoinTable
 import com.example.coinwise.presentation.MainPresenter
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
@@ -21,27 +27,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         window.statusBarColor = getColor(R.color.md_theme_dark_background)
-
+        setFragment()
+        setNavigation()
 
         presenter = MainPresenter(view = this, repository = DependencyInjector.coinRepository(this))
         presenter.findCoins()
-        val fragment = ListCoinFragment()
-
-        supportFragmentManager.beginTransaction().apply {
-            add(R.id.frame_activity_main, fragment)
-            commit()
-        }
 
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
-
-        binding.fabActivityMain.setOnClickListener {
-            setAlertDialog()
-        }
-        setNavigation()
     }
 
     fun onGetCoin(l: List<String>) {
         mainViewModel.arrayListLiveData.postValue(l)
+
+
+
+
     }
 
 
@@ -77,7 +77,42 @@ class MainActivity : AppCompatActivity() {
         dialog.show()
     }
 
+    private fun setDeleteAlertDialog(){
+        AlertDialog.Builder(this)
+            .setMessage(R.string.delete_message)
+            .setNegativeButton(R.string.cancel) { dialog, which ->
+
+            }
+            .setPositiveButton(R.string.delete) { dialog, which ->
+
+                presenter.removeCoin(coinId= 1)
+            }
+            .create()
+            .show()
+    }
+
+    private fun setFragment(){
+        val fragment = ListCoinFragment()
+        supportFragmentManager.beginTransaction().apply {
+            add(R.id.frame_activity_main, fragment)
+            commit()
+        }
+    }
     private fun setNavigation() {
+        binding.toolbarActivityMain.inflateMenu(R.menu.menu_toolbar)
+
+        binding.fabActivityMain.setOnClickListener {
+            setAlertDialog()
+        }
+
+        binding.toolbarActivityMain.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.delete -> {
+                    setDeleteAlertDialog()
+                }
+            }
+            true
+        }
         binding.bottomNavAppBarActivityMain.setOnMenuItemClickListener { item ->
 
             when (item.itemId) {
