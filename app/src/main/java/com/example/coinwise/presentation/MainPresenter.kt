@@ -29,6 +29,9 @@ class MainPresenter(
         repository.deleteCoin(coinId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doOnComplete {
+                onRestartView()
+            }
             .subscribe()
 
     }
@@ -55,6 +58,11 @@ class MainPresenter(
             .subscribe()
     }
 
+
+    private fun onRestartView(){
+        view.onRestartView()
+    }
+
     private fun onGetCoin(l: List<CoinTable>) {
 
 
@@ -65,17 +73,16 @@ class MainPresenter(
         }else{
             val list = listOf<String>()
             view.onGetCoin(list)
-            addCoin(CoinTable(Coin(listOf<String>("erro", "erro"))))
+
+             addCoin(CoinTable(id = 1,Coin(listOf<String>("lista", "vazia")).convertCoinToString()))
         }
-
-
 
     }
 
     @SuppressLint("CheckResult")
     private fun onCoinFail(t: Throwable) {
-        val list = listOf<String>("abc", "cba")
-        repository.insertCoin(CoinTable(Coin(list)))
+        val list = listOf<String>("lista" , "vazia")
+        repository.insertCoin(CoinTable(id = 1,coinList= Coin(list).convertCoinToString()))
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .doOnComplete {

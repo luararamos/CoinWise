@@ -5,10 +5,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface MercadoBitcoinAPI {
-
-    @GET("BTC/ticker")
-    fun findCoin(): Call<Root>
-
     @GET("ADA/ticker")
     fun findADA(): Call<Root>
     @GET("BNB/ticker")

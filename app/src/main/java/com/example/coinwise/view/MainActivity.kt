@@ -38,12 +38,12 @@ class MainActivity : AppCompatActivity() {
 
     fun onGetCoin(l: List<String>) {
         mainViewModel.arrayListLiveData.postValue(l)
-
-
-
-
     }
 
+    fun onRestartView() {
+        finish()
+        startActivity(intent)
+    }
 
     private fun setAlertDialog() {
         val builder = AlertDialog.Builder(this)
