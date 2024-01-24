@@ -20,65 +20,72 @@ class CoinDetailsActivity : AppCompatActivity() {
         binding = ActivityCoinDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
         val coin = intent.extras?.getString("coin")
-        binding.txtCoin.text = coin
+        binding.txtCoinActivityCoinDetails.text = coin
         setImageCoin(coin)
         presenter.findCoin(coin)
 
+        setNavigationToGoBack()
 
+    }
+
+    private fun setNavigationToGoBack(){
+        binding.toolbarActivityCoinDetails.setNavigationOnClickListener {
+            finish()
+        }
     }
 
     private fun setImageCoin(coin: String?){
         when (coin) {
-            "ADA" -> binding.cvCoinActivityDeatails.setImageDrawable(
+            "ADA" -> binding.cvCoinActivityCoinDetails.setImageDrawable(
                 ContextCompat.getDrawable(
                     this,
                     R.drawable.ic_ada
                 )
             )
 
-            "BNB" -> binding.cvCoinActivityDeatails.setImageDrawable(
+            "BNB" -> binding.cvCoinActivityCoinDetails.setImageDrawable(
                 ContextCompat.getDrawable(
                     this,
                     R.drawable.ic_bnb
                 )
             )
 
-            "BTC" -> binding.cvCoinActivityDeatails.setImageDrawable(
+            "BTC" -> binding.cvCoinActivityCoinDetails.setImageDrawable(
                 ContextCompat.getDrawable(
                     this,
                     R.drawable.ic_btc
                 )
             )
 
-            "DOGE" -> binding.cvCoinActivityDeatails.setImageDrawable(
+            "DOGE" -> binding.cvCoinActivityCoinDetails.setImageDrawable(
                 ContextCompat.getDrawable(
                     this,
                     R.drawable.ic_doge
                 )
             )
 
-            "ETH" -> binding.cvCoinActivityDeatails.setImageDrawable(
+            "ETH" -> binding.cvCoinActivityCoinDetails.setImageDrawable(
                 ContextCompat.getDrawable(
                     this,
                     R.drawable.ic_eth
                 )
             )
 
-            "USDT" -> binding.cvCoinActivityDeatails.setImageDrawable(
+            "USDT" -> binding.cvCoinActivityCoinDetails.setImageDrawable(
                 ContextCompat.getDrawable(
                     this,
                     R.drawable.ic_usdt
                 )
             )
 
-            "XRP" -> binding.cvCoinActivityDeatails.setImageDrawable(
+            "XRP" -> binding.cvCoinActivityCoinDetails.setImageDrawable(
                 ContextCompat.getDrawable(
                     this,
                     R.drawable.ic_xrp
                 )
             )
 
-            else -> binding.cvCoinActivityDeatails.setImageDrawable(
+            else -> binding.cvCoinActivityCoinDetails.setImageDrawable(
                 ContextCompat.getDrawable(
                     this,
                     R.drawable.ic_information
@@ -87,21 +94,27 @@ class CoinDetailsActivity : AppCompatActivity() {
         }
     }
     fun showCoin(coin: Ticker) {
-        binding.txtHighCoinDetails.text = coin.high.toString()
-        binding.txtLowCoinDetails.text = coin.low.toString()
-        binding.txtVolCoinDetails.text = coin.vol.toString()
-        binding.txtLastCoinDetails.text = coin.last.toString()
-        binding.txtBuyCoinDetails.text = coin.buy.toString()
-        binding.txtSellCoinDetails.text = coin.sell.toString()
-        binding.txtOpenCoinDetails.text = coin.open.toString()
-        binding.txtDateCoinDetails.text = coin.date.toString()
+        val txtHigh = getString(R.string.high)
+        val txtLow = getString(R.string.low)
+        val txtVol = getString(R.string.vol)
+        val txtLast = getString(R.string.last)
+        val txtBuy = getString(R.string.buy)
+        val txtSell = getString(R.string.sell)
+        val txtOpen = getString(R.string.open)
+        binding.txtHighActivityCoinDetails.text = txtHigh.plus(coin.high.toString())
+        binding.txtLowActivityCoinDetailss.text = txtLow.plus(coin.low.toString())
+        binding.txtVolActivityCoinDetails.text = txtVol.plus(coin.vol.toString())
+        binding.txtLastActivityCoinDetails.text = txtLast.plus(coin.last.toString())
+        binding.txtBuyActivityCoinDetails.text = txtBuy.plus(coin.buy.toString())
+        binding.txtSellActivityCoinDetails.text = txtSell.plus(coin.sell.toString())
+        binding.txtOpenActivityCoinDetails.text = txtOpen.plus(coin.open.toString())
     }
 
     fun progressbar(visibility: Boolean){
         if (visibility) {
-            binding.progressbarActivityDetails.visibility = View.VISIBLE
+            binding.progressbarActivityCoinDetails.visibility = View.VISIBLE
         } else {
-            binding.progressbarActivityDetails.visibility = View.GONE
+            binding.progressbarActivityCoinDetails.visibility = View.GONE
         }
     }
 

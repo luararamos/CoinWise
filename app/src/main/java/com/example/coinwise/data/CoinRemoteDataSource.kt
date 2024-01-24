@@ -8,10 +8,16 @@ import retrofit2.Response
 class CoinRemoteDataSource {
 
     fun findCoin(callback: CoinCallback, coinName: String?) {
-        HTTPClient.retrofit()
-            .create(MercadoBitcoinAPI::class.java)
-        // Depois passar o coinName
-            .findCoin()
+        when (coinName) {
+            "ADA" -> HTTPClient.retrofit().create(MercadoBitcoinAPI::class.java).findADA()
+            "BNB" -> HTTPClient.retrofit().create(MercadoBitcoinAPI::class.java).findBNB()
+            "BTC" -> HTTPClient.retrofit().create(MercadoBitcoinAPI::class.java).findBTC()
+            "DOGE" -> HTTPClient.retrofit().create(MercadoBitcoinAPI::class.java).findDOGE()
+            "ETH" -> HTTPClient.retrofit().create(MercadoBitcoinAPI::class.java).findETH()
+            "USDT" -> HTTPClient.retrofit().create(MercadoBitcoinAPI::class.java).findUSDT()
+            "XRP" -> HTTPClient.retrofit().create(MercadoBitcoinAPI::class.java).findXRP()
+            else -> HTTPClient.retrofit().create(MercadoBitcoinAPI::class.java).findADA()
+        }
             .enqueue(object : Callback<Root> {
                 override fun onResponse(call: Call<Root>, response: Response<Root>) {
                     if (response.isSuccessful) {
