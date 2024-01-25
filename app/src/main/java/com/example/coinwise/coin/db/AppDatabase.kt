@@ -1,4 +1,4 @@
-package com.example.coinwise.db
+package com.example.coinwise.coin.db
 
 
 import android.content.Context

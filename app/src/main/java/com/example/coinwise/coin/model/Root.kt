@@ -1,4 +1,4 @@
-package com.example.coinwise.model
+package com.example.coinwise.coin.model
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,4 +1,4 @@
-package com.example.coinwise.db
+package com.example.coinwise.coin.db
 
 import androidx.room.Dao
 import androidx.room.Delete

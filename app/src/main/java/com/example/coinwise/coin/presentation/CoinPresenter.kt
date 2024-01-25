@@ -1,22 +1,22 @@
-package com.example.coinwise.presentation
+package com.example.coinwise.coin.presentation
 
 import android.annotation.SuppressLint
-import android.view.View
-import com.example.coinwise.data.CoinRepository
-import com.example.coinwise.db.Coin
-import com.example.coinwise.db.CoinTable
-import com.example.coinwise.db.Converters
-import com.example.coinwise.view.MainActivity
+import com.example.coinwise.coin.RegisterCoins
+import com.example.coinwise.coin.data.CoinRepository
+import com.example.coinwise.coin.db.Coin
+import com.example.coinwise.coin.db.CoinTable
+import com.example.coinwise.coin.db.Converters
+import com.example.coinwise.coin.view.MainActivity
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
-class MainPresenter(
-    private var view: MainActivity,
+class CoinPresenter(
+    private var view: MainActivity?,
     private var repository: CoinRepository
-) {
+) : RegisterCoins.Presenter{
 
     @SuppressLint("CheckResult")
-    fun addCoin(coin: CoinTable) {
+    override fun addCoin(coin: CoinTable) {
         repository.insertCoin(coin)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -25,7 +25,7 @@ class MainPresenter(
     }
 
     @SuppressLint("CheckResult")
-    fun removeCoin(coinId: Int) {
+    override fun removeCoin(coinId: Int) {
         repository.deleteCoin(coinId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -37,7 +37,7 @@ class MainPresenter(
     }
 
     @SuppressLint("CheckResult")
-    fun findCoins() {
+    override fun findCoins() {
         repository.findAllCoin()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -48,7 +48,7 @@ class MainPresenter(
     }
 
     @SuppressLint("CheckResult")
-    fun updateCoin(coin : CoinTable) {
+    override fun updateCoin(coin : CoinTable) {
         repository.updateCoin(coin)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
@@ -58,9 +58,8 @@ class MainPresenter(
             .subscribe()
     }
 
-
     private fun onRestartView(){
-        view.onRestartView()
+        view?.onRestartView()
     }
 
     private fun onGetCoin(l: List<CoinTable>) {
@@ -69,10 +68,10 @@ class MainPresenter(
         if (l.isNotEmpty()){
             val coin = l[0].coinList
             val listCoin = Converters().jsonToList(coin)
-            view.onGetCoin(listCoin)
+            view?.onGetCoin(listCoin)
         }else{
             val list = listOf<String>()
-            view.onGetCoin(list)
+            view?.onGetCoin(list)
 
              addCoin(CoinTable(id = 1,Coin(listOf<String>("lista", "vazia")).convertCoinToString()))
         }
@@ -89,5 +88,8 @@ class MainPresenter(
                 findCoins()
             }
             .subscribe()
+    }
+    override fun onDestroy() {
+        view = null
     }
 }

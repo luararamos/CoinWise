@@ -1,4 +1,4 @@
-package com.example.coinwise.view
+package com.example.coinwise.coin.view
 
 import android.os.Bundle
 import android.view.View

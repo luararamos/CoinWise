@@ -1,16 +1,17 @@
-package com.example.coinwise.presentation
+package com.example.coinwise.coin.presentation
 
-import com.example.coinwise.data.CoinCallback
-import com.example.coinwise.data.CoinRemoteDataSource
-import com.example.coinwise.model.Ticker
-import com.example.coinwise.view.CoinDetailsActivity
+import com.example.coinwise.coin.DetailsCoins
+import com.example.coinwise.coin.data.CoinCallback
+import com.example.coinwise.coin.data.CoinRemoteDataSource
+import com.example.coinwise.coin.model.Ticker
+import com.example.coinwise.coin.view.CoinDetailsActivity
 
 class CoinDetailsPresenter(
     private val view: CoinDetailsActivity,
     private val dataSource: CoinRemoteDataSource = CoinRemoteDataSource()
-) : CoinCallback{
+) : CoinCallback, DetailsCoins.Presenter {
 
-    fun findCoin(coinName: String?) {
+    override fun findCoin(coinName: String?) {
         view.progressbar(true)
         dataSource.findCoin(this, coinName)
     }

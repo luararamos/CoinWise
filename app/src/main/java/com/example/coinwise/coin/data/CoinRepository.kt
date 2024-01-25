@@ -1,8 +1,8 @@
-package com.example.coinwise.data
+package com.example.coinwise.coin.data
 
 import android.content.Context
-import com.example.coinwise.db.AppDatabase
-import com.example.coinwise.db.CoinTable
+import com.example.coinwise.coin.db.AppDatabase
+import com.example.coinwise.coin.db.CoinTable
 import io.reactivex.Completable
 import io.reactivex.Single
 

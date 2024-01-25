@@ -1,4 +1,4 @@
-package com.example.coinwise.data
+package com.example.coinwise.coin.data
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

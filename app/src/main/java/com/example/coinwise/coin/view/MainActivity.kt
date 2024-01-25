@@ -1,27 +1,23 @@
-package com.example.coinwise.view
+package com.example.coinwise.coin.view
 
 import android.app.AlertDialog
 import android.os.Bundle
-import android.view.Menu
-import android.view.View
-import android.widget.LinearLayout
-import android.widget.Toolbar
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.coinwise.R
 import com.example.coinwise.base.DependencyInjector
+import com.example.coinwise.coin.RegisterCoins
 import com.example.coinwise.databinding.ActivityMainBinding
-import com.example.coinwise.db.Coin
-import com.example.coinwise.db.CoinTable
-import com.example.coinwise.presentation.MainPresenter
+import com.example.coinwise.coin.db.Coin
+import com.example.coinwise.coin.db.CoinTable
+import com.example.coinwise.coin.presentation.CoinPresenter
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), RegisterCoins.View {
     private lateinit var binding: ActivityMainBinding
     private lateinit var mainViewModel: MainViewModel
-    lateinit var presenter: MainPresenter
+    override lateinit var presenter: CoinPresenter
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,17 +26,17 @@ class MainActivity : AppCompatActivity() {
         setFragment()
         setNavigation()
 
-        presenter = MainPresenter(view = this, repository = DependencyInjector.coinRepository(this))
+        presenter = CoinPresenter(view = this, repository = DependencyInjector.coinRepository(this))
         presenter.findCoins()
 
         mainViewModel = ViewModelProvider(this).get(MainViewModel::class.java)
     }
 
-    fun onGetCoin(l: List<String>) {
+    override fun onGetCoin(l: List<String>) {
         mainViewModel.arrayListLiveData.postValue(l)
     }
 
-    fun onRestartView() {
+    override fun onRestartView() {
         finish()
         startActivity(intent)
     }

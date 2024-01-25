@@ -1,4 +1,4 @@
-package com.example.coinwise.view
+package com.example.coinwise.coin.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -17,7 +17,7 @@ class ListCoinFragment : Fragment(R.layout.fragment_list_coins) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding = FragmentListCoinsBinding.bind(view)
-        binding?.rvFragmentInformation?.layoutManager = LinearLayoutManager(context)
+        binding?.rvFragmentListCoin?.layoutManager = LinearLayoutManager(context)
 
         activity?.let {
             mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
@@ -33,13 +33,13 @@ class ListCoinFragment : Fragment(R.layout.fragment_list_coins) {
     private fun showListCoin(coins: List<String>) {
         if (coins.isEmpty()) {
             val drawable = ContextCompat.getDrawable(this.requireContext(), R.drawable.unfiltered_message)
-            binding?.imgNoCoinsFragmentInformation?.setImageDrawable(drawable)
-            binding?.imgNoCoinsFragmentInformation?.visibility = View.VISIBLE
+            binding?.imgNoCoinsFragmentListCoin?.setImageDrawable(drawable)
+            binding?.imgNoCoinsFragmentListCoin?.visibility = View.VISIBLE
         } else {
-            binding?.rvFragmentInformation?.adapter = ListCoinAdapter(coins) { coin ->
+            binding?.rvFragmentListCoin?.adapter = ListCoinAdapter(coins) { coin ->
                 goToDetails(coin)
             }
-            binding?.imgNoCoinsFragmentInformation?.visibility = View.GONE
+            binding?.imgNoCoinsFragmentListCoin?.visibility = View.GONE
         }
 
     }

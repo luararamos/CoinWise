@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".view.ListCoinFragment">
+    tools:context=".coin.view.ListCoinFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
         <ImageView
-            android:id="@+id/img_no_coins_fragment_information"
+            android:id="@+id/img_no_coins_fragment_list_coin"
             style="@style/MyImageView"
             android:contentDescription="@null"
             android:src="@drawable/unfiltered_message"
@@ -21,7 +21,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_fragment_information"
+            android:id="@+id/rv_fragment_list_coin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"

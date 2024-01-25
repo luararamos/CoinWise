@@ -1,4 +1,4 @@
-package com.example.coinwise.view
+package com.example.coinwise.coin.view
 
 import android.os.Bundle
 import android.view.View
@@ -6,12 +6,13 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.coinwise.R
+import com.example.coinwise.coin.DetailsCoins
 import com.example.coinwise.databinding.ActivityCoinDetailsBinding
-import com.example.coinwise.model.Ticker
-import com.example.coinwise.presentation.CoinDetailsPresenter
+import com.example.coinwise.coin.model.Ticker
+import com.example.coinwise.coin.presentation.CoinDetailsPresenter
 
-class CoinDetailsActivity : AppCompatActivity() {
-    val presenter = CoinDetailsPresenter(this)
+class CoinDetailsActivity : AppCompatActivity(), DetailsCoins.View {
+    override var presenter = CoinDetailsPresenter(this)
 
     private lateinit var binding: ActivityCoinDetailsBinding
 
@@ -93,7 +94,7 @@ class CoinDetailsActivity : AppCompatActivity() {
             )
         }
     }
-    fun showCoin(coin: Ticker) {
+    override fun showCoin(coin: Ticker) {
         val txtHigh = getString(R.string.high)
         val txtLow = getString(R.string.low)
         val txtVol = getString(R.string.vol)
@@ -102,7 +103,7 @@ class CoinDetailsActivity : AppCompatActivity() {
         val txtSell = getString(R.string.sell)
         val txtOpen = getString(R.string.open)
         binding.txtHighActivityCoinDetails.text = txtHigh.plus(coin.high.toString())
-        binding.txtLowActivityCoinDetailss.text = txtLow.plus(coin.low.toString())
+        binding.txtLowActivityCoinDetails.text = txtLow.plus(coin.low.toString())
         binding.txtVolActivityCoinDetails.text = txtVol.plus(coin.vol.toString())
         binding.txtLastActivityCoinDetails.text = txtLast.plus(coin.last.toString())
         binding.txtBuyActivityCoinDetails.text = txtBuy.plus(coin.buy.toString())
@@ -110,7 +111,7 @@ class CoinDetailsActivity : AppCompatActivity() {
         binding.txtOpenActivityCoinDetails.text = txtOpen.plus(coin.open.toString())
     }
 
-    fun progressbar(visibility: Boolean){
+    override fun progressbar(visibility: Boolean){
         if (visibility) {
             binding.progressbarActivityCoinDetails.visibility = View.VISIBLE
         } else {
@@ -118,7 +119,7 @@ class CoinDetailsActivity : AppCompatActivity() {
         }
     }
 
-    fun showError(e: String){
+    override fun showError(e: String){
         Toast.makeText(this,e, Toast.LENGTH_SHORT).show()
     }
 }
