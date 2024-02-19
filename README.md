@@ -4,7 +4,7 @@ O Coin Wise é um aplicativo que fornece informações em tempo real sobre os va
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;![coin_rise_gif](https://github.com/luararamos/CoinWise/assets/35637366/9751c862-d466-4587-a70c-d39cf67aa745)
 
 
-## Recursos Principais
+# Recursos Principais
 - **Acompanhamento em Tempo Real:** Obtenha informações atualizadas instantaneamente.
 - **Lista de Criptomoedas:** Explore uma ampla variedade de criptomoedas e seus detalhes.
 - **Favoritos:** Marque suas criptomoedas favoritas para acesso rápido.
